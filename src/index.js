@@ -1,9 +1,11 @@
 const express = require('express');
-
 const app = express();
-
 const personRoute = require('./routes/person');
 const path = require('path');
+const bodyParser = require('body-parser');
+const customerRoute = require('./routes/customer');
+
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   console.log(`${new Date().toString()} => ${req.originalUrl}`);
@@ -11,6 +13,7 @@ app.use((req, res, next) => {
 });
 
 app.use(personRoute);
+app.use(customerRoute);
 app.use(express.static('public'));
 
 //404 Error handler

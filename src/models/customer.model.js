@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const server = 'mongodb://localhost:27017';
+const server = 'localhost:27017';
 const database = 'apiTest';
-const user = 'root';
-const password = 'root';
+const user = 'useradmin';
+const password = 'thepianohasbeendrinking';
 
 mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`);
 
